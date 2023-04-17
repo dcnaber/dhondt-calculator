@@ -57,7 +57,7 @@ function App() {
   const results = final_result.map((final_result) => <div className=''><li>{final_result}</li></div>);  
 
   return (
-    <div className="flex justify-start items-center h-screen">
+    <div className="flex justify-start m-5 h-screen">
       <div>
       
 
@@ -112,13 +112,13 @@ function App() {
 
     </div>
 
-      <div className='m-5 '>
+      <div className='m-5 relative absolute left-500'>
       <TextField id="outlined-basic" onChange={(e) => {setTotalSeats(e.target.value)}} label="Number of Seats" variant="outlined" />
       <div className='my-2'><Button onClick={() => {setFinal_result(dhondtElectionSystem(totalSeats, all_parties))}} variant="contained">Calculate</Button></div>
+      <h1 className='text-3xl my-3'>Results:</h1>
+      <div>{results}</div>
       </div>
-      
 
-    <div className='flex justify-end'>{results}</div>
 
     </div>
   );
