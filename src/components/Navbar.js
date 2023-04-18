@@ -8,7 +8,7 @@ export default function NavBar() {
 <nav>
   <ul className="flex space-x-4">
     <li>
-      <a href="#" className="font-medium text-gray-500 hover:text-gray-900">
+      <a href="/" className="font-medium text-gray-500 hover:text-gray-900">
         Home
       </a>
     </li>

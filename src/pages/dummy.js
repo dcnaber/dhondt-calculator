@@ -23,31 +23,6 @@ function Calculator() {
   const [partyName4, setPartyName4] = useState('');
   const [partyVote4, setPartyVote4] = useState('');
 
-  const [partyName5, setPartyName5] = useState('');
-  const [partyVote5, setPartyVote5] = useState('');
-
-  const [partyName6, setPartyName6] = useState('');
-  const [partyVote6, setPartyVote6] = useState('');
-
-  const [partyName7, setPartyName7] = useState('');
-  const [partyVote7, setPartyVote7] = useState('');
-
-  const [partyName8, setPartyName8] = useState('');
-  const [partyVote8, setPartyVote8] = useState('');
-
-  const [totalSeats, setTotalSeats] = useState('');
-
-  var all_parties = [
-    [partyName, partyVote],
-    [partyName2, partyVote2],
-    [partyName3, partyVote3],
-    [partyName4, partyVote4],
-    [partyName5, partyVote5],
-    [partyName6, partyVote6],
-    [partyName7, partyVote7],
-    [partyName8, partyVote8]
-  ];
-
   const [final_result, setFinal_result] = useState(["The results will appear here once you enter the data"]);
 
   const join_results = final_result.join(' ').split(",").join("");  
@@ -88,27 +63,6 @@ function Calculator() {
       <div className='m-5'>
       <TextField id="outlined-basic" onChange={(e) => {setPartyName4(e.target.value + " ")}} label="Party Name" variant="outlined" />
       <TextField id="outlined-basic" onChange={(e) => {setPartyVote4(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName5(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote5(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName6(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote6(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName7(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote7(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName8(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote8(e.target.value)}} label="Number of Votes" variant="outlined" />
-
       </div>
 
     </div>
