@@ -52,87 +52,59 @@ function Calculator() {
 
   const join_results = final_result.join(' ').split(",").join("");  
 
-  const results = final_result.map((final_result) => <div className=''><li className='font-link'>{final_result}</li></div>);  
+  const results = final_result.map((final_result) => <div className=''><li className='font-link text-md'>{final_result}</li></div>);  
 
   return (
     <div>
-    <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-       <NavBar />
-    </div>
-       <div className='max-w-7xl mx-auto grid grid-cols-2'>
-          
-          <div className='bg-white p-6 rounded-lg shadow'>
-            <h2 className='text-lg font-medium mb-4 font-link'>Enter party details</h2>
-            <div className=' flex justify-start m-5 h-screen'>
-        <div className='grid grid-cols-2'>
+<div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+  <NavBar />
+</div>
+
+<div className='flex justify-center items-center'>
+
+
+
+<div className="max-w-7xl mx-auto mt-5 grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-2">
+{<div className="bg-white p-6 rounded-lg shadow">
+    <h1 className="text-lg font-medium mb-4 font-link">Results:</h1>
+    <div>{results}</div>
+  </div>}
+  <div className="bg-white p-6 rounded-lg shadow">
+    <h2 className="text-lg font-medium mb-4 font-link">Enter party details</h2>
+    
+    <div className="space-y-5">
+      <div>
+        <TextField id="outlined-basic" onChange={(e) => {setPartyName(e.target.value + " ")}} label="Party Name" variant="outlined"/>
+        <TextField id="outlined-basic" onChange={(e) => {setPartyVote(e.target.value)}} label="Number of Votes" variant="outlined" />
+      </div>
       
 
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName(e.target.value + " ")}} label="Party Name" variant="outlined"/>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote(e.target.value)}} label="Number of Votes" variant="outlined" />
+      <div>
+        <TextField id="outlined-basic" onChange={(e) => {setPartyName2(e.target.value + " ")}} label="Party Name" variant="outlined" />
+        <TextField id="outlined-basic" onChange={(e) => {setPartyVote2(e.target.value)}} label="Number of Votes" variant="outlined" />
       </div>
 
-
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName2(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote2(e.target.value)}} label="Number of Votes" variant="outlined" />
+      <div>
+        <TextField id="outlined-basic" onChange={(e) => {setPartyName3(e.target.value + " ")}} label="Party Name" variant="outlined" />
+        <TextField id="outlined-basic" onChange={(e) => {setPartyVote3(e.target.value)}} label="Number of Votes" variant="outlined" />
       </div>
 
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName3(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote3(e.target.value)}} label="Number of Votes" variant="outlined" />
+      <div>
+        <TextField id="outlined-basic" onChange={(e) => {setPartyName4(e.target.value + " ")}} label="Party Name" variant="outlined" />
+        <TextField id="outlined-basic" onChange={(e) => {setPartyVote4(e.target.value)}} label="Number of Votes" variant="outlined" />
+      </div> 
+      
+      <div>
+        <TextField id="outlined-basic" onChange={(e) => {setTotalSeats(e.target.value)}} label="Number of Seats" variant="outlined" />
+        <div className="my-2"><Button onClick={() => {setFinal_result(dhondtElectionSystem(totalSeats, all_parties))}} variant="contained">Calculate</Button></div>
       </div>
-
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName4(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote4(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName5(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote5(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName6(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote6(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName7(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote7(e.target.value)}} label="Number of Votes" variant="outlined" />
-      </div>
-
-      <div className='m-5'>
-      <TextField id="outlined-basic" onChange={(e) => {setPartyName8(e.target.value + " ")}} label="Party Name" variant="outlined" />
-      <TextField id="outlined-basic" onChange={(e) => {setPartyVote8(e.target.value)}} label="Number of Votes" variant="outlined" />
-
-      </div>
-
-    </div>
-
-      <div className='m-5 relative absolute left-500'>
-      <TextField id="outlined-basic" onChange={(e) => {setTotalSeats(e.target.value)}} label="Number of Seats" variant="outlined" />
-      <div className='my-2'><Button onClick={() => {setFinal_result(dhondtElectionSystem(totalSeats, all_parties))}} variant="contained">Calculate</Button></div>
-      </div>
-
-
-    </div>
     </div>
     
+  </div>
+  
 
-    <div className='bg-white p-6 rounded-lg shadow mx-5'>
-    <h1 className='text-3xl my-3 font-link font-bold'>Results:</h1>
-    <div>{results}</div>
-    </div>
-
-
-
-
-    
-    </div>
+</div>
+</div>
     </div>
   );
 }
